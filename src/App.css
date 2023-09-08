@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@200;400;700&display=swap');
+
+/* General Styles */
+html {
+  font-size: 62.5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* Navbar */
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 45px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    margin: 4em;
+}
+
+header nav ul {
+    display: flex;
+    gap: 3.6em;
+    margin: 0; /* Quita el margen por defecto del elemento ul */
+}
+
+header nav a {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+header nav a.active:before {
+    position: absolute;
+    content: "";
+    width: 35%;
+    height: 1px;
+    border-bottom: 2px solid #000;
+    left: 0;
+    bottom: -6px;
+}
+
+header nav a:before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 1px;
+    border-bottom: 2px solid #7a7a7a;
+    left: 0;
+    bottom: -6px;
+    transition: width .3s;
+} 
+
+/* Hero Section */
+main {
+    display: flex;
+    gap: 8em;
+    margin-top: 11em;
+}
+
+.left-col {
+    width: 45%;
+}
+
+h1 {
+    font-size: 5.2rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    margin: 0;
+}
+
+.subhead {
+    font-size: 1.8rem;
+}
+
+.cta-btns {
+    margin: 5em 0;
+}
+
+.cta-btns, .secondary-btn {
+    display: flex;
+    gap: 2em;
+}
+
+.primary-btn {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000;
+    border-radius: 1.2em;
+    padding: 1em 2em;
+    background: #F2F0DF;
+    transition: all .3s;
+}
+
+.secondary-btn {
+    display: block;
+    font-size: 1.6rem;
+    padding: 1em 0;
+}
+
+.secondary-btn svg {
+    width: 20px;
+    margin-left: 10px;
+    transition: transform .3s;
+}
+
+.news {
+    display: flex;
+    gap: 3em;
+    padding: 5em;
+    border: 1px solid #000;
+    border-radius: 1.9em;
+    box-shadow: 15px 9px 30px #a0a0a041;
+    position: relative;
+}
+
+.news::before {
+    position: absolute;
+    content: "";
+    background: url('./assets/images/confetti.svg');
+    width: 100px;
+    height: 100px;
+    top: -20px;
+    left: -20px;
+}
+
+p.employees {
+    font-size: 3.3rem;
+    font-weight: 200;
+    margin: 0;
+    line-height: 100%;
+}
+
+.details {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.right-col {
+    display: grid;
+    gap: 2.3em;
+    grid-template-columns: repeat(2, auto);
+    grid-template-areas: 
+        "left ."
+        "left .";
+    flex: 1;
+}
+
+/* Cards */
+.card {
+    display: flex;
+    align-items: end;
+    border-radius: .8em;
+    padding: 1.1em;
+    background-size: 150%;
+    transition: background-size 800ms;
+}
+
+.card1 {
+    grid-area: left;
+    background-image: url("./assets/images/clothing1.jpg");
+    position: relative;
+}
+
+.card1::before {
+    position: absolute;
+    content: "";
+    background: url("./assets/images/tag.svg") no-repeat;
+    width: 100%;
+    height: 100%;
+    top: 20px;
+    left: -30px;
+    pointer-events: none;
+}
+
+.card2 {
+    background-image: url("./assets/images/clothing2.jpg");
+}
+
+.card3 {
+    background-image: url("./assets/images/clothing3.jpg");
+}
+
+.card-details {
+    background: #fff;
+    border-radius: .6em;
+    padding: 2em;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 800ms;
+}
+
+.product-title {
+    color: #000;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.product-description {
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.product-price {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+/* Microinteractions */
+header nav a:hover:before {
+    width: 35%;
+}
+
+.primary-btn:hover {
+    background: #E2D1BD;
+}
+
+.secondary-btn:hover {
+    text-decoration: underline;
+}
+
+.secondary-btn:hover svg {
+    transform: translateX(10px);
+}
+
+.card:hover {
+    background-size: 160%;
+}
+
+.card:hover .card-details {
+    transform: translateY(-20px);
+}
+
